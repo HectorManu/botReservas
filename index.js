@@ -22,11 +22,13 @@ client.on('message', async msg => {
         msg.react('👍');
     } 
     else if(msg.body === '1'){
-        msg.reply("Haz seleccionado la opción 1\nDe cual conchita deseas consultar información:\nA. Conchita Uno\nB. Conchita dos\nC. Conchita tres\nD. Conchita cuatro\n0. Regresa al menu principal")
+        msg.reply("Haz seleccionado la opción 1\nDe cual conchita deseas consultar información:\nA. Conchita Uno\nB. Conchita dos\nC. Conchita tres\nD. Conchita cuatro\nC. Conchita 5\n0. Regresa al menu principal")
+        //PONER EN QUE CONCHITA ES LA RESERVA DE FECHAS
     }else if(msg.body === '2'){
-        msg.reply("Por favor ingrese en sl siguiente formato (DD/MM/AAAA) su fecha de inicio de estadia y después en otro mensaje envie en el mismo formato la fecha de finalización de su hospedaje\n\n0. Regresa al menu principal")
+        msg.reply("Por favor ingrese en sl siguiente formato (DD/MM/AAAA) su fecha de inicio de estadia y después en otro mensaje envie en el mismo formato la fecha de finalización de su hospedaje\n\n0. Regresa al menu principaL")
     }else if(msg.body === '3'){
-        msg.reply("Haz seleccionado la opción 3\nEsper un momento mientra le colocamos un asesor de calidad\n\n0. Regresa al menu principal")
+        msg.reply("Haz seleccionado la opción 3\nEspera un momento mientra le colocamos un asesor de calidad\n\n0. Regresa al menu principal")
+        //consulta de fecha la conchita de sisal uno entrando desde dos pm saliendo tal hora máximo medio dia por TODOS ENTRAN DESDE LAS DOS DE LA TARDE MAXIMO MEDIO DIA Y AL FINAL EL PRECIO 
     }else if(msg.body === 'A'){
         msg.reply("La conchita A se encuentra ubicada en:\nCon un precio de habitación vigente hasta 00/00/0000\n\n\n0. Regresa al menu principal")
     }else if(msg.body === 'B'){

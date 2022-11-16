@@ -28,7 +28,7 @@ client.on('message', async msg => {
     }else if(msg.body === 'B'){
         msg.reply("Has seleccionado la opción B\nIngrese el número de la conchita que desea consultar 1,2,3,4 o 5\nPor favor ingrese en sl siguiente formato (DD/MM/AAAA) su fecha de inicio de estadia y después en otro mensaje envie en el mismo formato la fecha de finalización de su hospedaje\n0. Regresa al menu principal")
     }else if(msg.body === 'C'){
-        msg.reply("Has seleccionado la opción C\nEsper un momento mientra le colocamos un asesor de calidad\n\n0. Regresa al menu principal")
+        msg.reply("Has seleccionado la opción C\nEspera un momento mientra le colocamos un asesor de calidad\n\n0. Regresa al menu principal")
     }else if(msg.body === '1'){
         msg.reply("La conchita uno\nMáximo de 5 personas\nPrecio de noche entre semana $1,300.00\nFin de semana 3 días y 2 noches o Temporada alta: $3,400.00\nLa ubicación de La Conchita de Sisal 1 es la zona céntrica de Sisa, Yucatán.\n0. Regresa al menu principal");
         const media1 = MessageMedia.fromFilePath('./img/1.png');
@@ -53,6 +53,8 @@ client.on('message', async msg => {
         msg.reply("La conchita cinco\nMáximo de 6 personas\nPrecio de noche entre semana $1,800.00\nFin de semana 3 días y 2 noches o Temporada alta: $5,000.00\n\n0. Regresa al menu principal")
         const media1 = MessageMedia.fromFilePath('./img/5.png');
         msg.reply(media1);
+    }else if(msg.body === '16/11/2022'){
+        msg.reply('Lo sentimos esa fecha no esta disponible pero tenemos libre el 16/11/2023');
     }
 
 

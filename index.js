@@ -54,7 +54,7 @@ client.on('message', async msg => {
         const media1 = MessageMedia.fromFilePath('./img/5.png');
         msg.reply(media1);
     }else if(msg.body === '16/11/2022'){
-        msg.reply('Lo sentimos esa fecha no esta disponible pero tenemos libre el 16/11/2023');
+        msg.reply('Lo sentimos esa fecha no esta disponible pero tenemos libre el 16/11/2023\n0. Regresa al menu principal');
     }
 
 

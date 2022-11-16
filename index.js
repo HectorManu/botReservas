@@ -24,6 +24,7 @@ client.on('message', async msg => {
     } 
     else if(msg.body === 'A'){
         msg.reply("Has seleccionado la opción A\nDe cual conchita deseas consultar información:\n1. Conchita Uno\n2. Conchita dos\n3. Conchita tres\n4. Conchita cuatro\n5. Conchita cinco\n0. Regresa al menu principal")
+        //consulta de fecha la conchita de sisal uno entrando desde dos pm saliendo tal hora máximo medio dia por TODOS ENTRAN DESDE LAS DOS DE LA TARDE MAXIMO MEDIO DIA Y AL FINAL EL PRECIO 
     }else if(msg.body === 'B'){
         msg.reply("Has seleccionado la opción B\nIngrese el número de la conchita que desea consultar 1,2,3,4 o 5\nPor favor ingrese en sl siguiente formato (DD/MM/AAAA) su fecha de inicio de estadia y después en otro mensaje envie en el mismo formato la fecha de finalización de su hospedaje\n0. Regresa al menu principal")
     }else if(msg.body === 'C'){

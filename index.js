@@ -1,6 +1,7 @@
 const qrcode = require('qrcode-terminal');
 
 const { Client } = require('whatsapp-web.js');
+const { MessageMedia } = require('whatsapp-web.js');
 const client = new Client();
 
 client.on('qr', qr => {
@@ -18,23 +19,39 @@ client.on('message', async msg => {
         // Send a new message as a reply to the current one
         const contact = await msg.getContact();
         const chat = await msg.getChat();
-        chat.sendMessage(`Hi @${contact.number}! soy Conchibot un servicio automatizado para la contestación de mensajes:\nEliga la opción que quiera consultar:\n1. Consulta de información de las conchitas\n2. Consulta de fechas\n3. Atención a cliente`, { mentions: [contact]});
+        chat.sendMessage(`Hi @${contact.number}! soy Conchibot un servicio automatizado para la contestación de mensajes:\nEliga la opción que quiera consultar:\nA. Consulta de información de las conchitas\nB. Consulta de fechas\nC. Atención a cliente`, { mentions: [contact]});
         msg.react('👍');
     } 
-    else if(msg.body === '1'){
-        msg.reply("Haz seleccionado la opción 1\nDe cual conchita deseas consultar información:\nA. Conchita Uno\nB. Conchita dos\nC. Conchita tres\nD. Conchita cuatro\n0. Regresa al menu principal")
-    }else if(msg.body === '2'){
-        msg.reply("Por favor ingrese en sl siguiente formato (DD/MM/AAAA) su fecha de inicio de estadia y después en otro mensaje envie en el mismo formato la fecha de finalización de su hospedaje\n\n0. Regresa al menu principal")
-    }else if(msg.body === '3'){
-        msg.reply("Haz seleccionado la opción 3\nEsper un momento mientra le colocamos un asesor de calidad\n\n0. Regresa al menu principal")
-    }else if(msg.body === 'A'){
-        msg.reply("La conchita A se encuentra ubicada en:\nCon un precio de habitación vigente hasta 00/00/0000\n\n\n0. Regresa al menu principal")
+    else if(msg.body === 'A'){
+        msg.reply("Has seleccionado la opción A\nDe cual conchita deseas consultar información:\n1. Conchita Uno\n2. Conchita dos\n3. Conchita tres\n4. Conchita cuatro\n5. Conchita cinco\n0. Regresa al menu principal")
     }else if(msg.body === 'B'){
-        msg.reply("La conchita B se encuentra ubicada en:\nCon un precio de habitación vigente hasta 00/00/0000\n\n\n0. Regresa al menu principal")
+        msg.reply("Has seleccionado la opción B\nIngrese el número de la conchita que desea consultar 1,2,3,4 o 5\nPor favor ingrese en sl siguiente formato (DD/MM/AAAA) su fecha de inicio de estadia y después en otro mensaje envie en el mismo formato la fecha de finalización de su hospedaje\n0. Regresa al menu principal")
     }else if(msg.body === 'C'){
-        msg.reply("La conchita D se encuentra ubicada en:\nCon un precio de habitación vigente hasta 00/00/0000\n\n\n0. Regresa al menu principal")
-    }else if(msg.body === 'D'){
-        msg.reply("La conchita D se encuentra ubicada en:\nCon un precio de habitación vigente hasta 00/00/0000\n\n\n0. Regresa al menu principal")
+        msg.reply("Has seleccionado la opción C\nEsper un momento mientra le colocamos un asesor de calidad\n\n0. Regresa al menu principal")
+    }else if(msg.body === '1'){
+        msg.reply("La conchita uno\nMáximo de 5 personas\nPrecio de noche entre semana $1,300.00\nFin de semana 3 días y 2 noches o Temporada alta: $3,400.00\nLa ubicación de La Conchita de Sisal 1 es la zona céntrica de Sisa, Yucatán.\n0. Regresa al menu principal");
+        const media1 = MessageMedia.fromFilePath('./img/1.png');
+        const media2 = MessageMedia.fromFilePath('./img/1_1.png')
+        msg.reply(media1);
+        msg.reply(media2);
+    }else if(msg.body === '2'){
+        msg.reply("La conchita dos\nMáximo de 7 personas\nPrecio de noche entre semana $1,300.00\nFin de semana 3 días y 2 noches o Temporada alta: $3,400.00\nLa ubicación de La Conchita de Sisal 2 es en la zona rumbo al playón de Sisal. (Junto a La Conchita de Sisal 3)\n0. Regresa al menu principal");
+        const media1 = MessageMedia.fromFilePath('./img/2.png');
+        const media2 = MessageMedia.fromFilePath('./img/2_1.png')
+        msg.reply(media1);
+        msg.reply(media2);
+    }else if(msg.body === '3'){
+        msg.reply("La conchita tres\nMáximo de 4 personas\nPrecio de noche entre semana $1,300.00\nFin de semana 3 días y 2 noches o Temporada alta: $3,400.00\nLa ubicación de La Conchita de Sisal 3 es en la zona rumbo al playón de Sisal. (Junto a La Conchita de Sisal 2)\n0. Regresa al menu principal");
+        const media1 = MessageMedia.fromFilePath('./img/3.png');
+        msg.reply(media1);
+    }else if(msg.body === '4'){
+        msg.reply("La conchita cuatro\nMáximo de 6 personas\nPrecio de noche entre semana $1,800.00\nFin de semana 3 días y 2 noches o Temporada alta: $5,000.00\nLa ubicación de La Conchita de Sisal 4 y 5 son juntas, y se encuentran rumbo a la UNAM.\n0. Regresa al menu principal")
+        const media1 = MessageMedia.fromFilePath('./img/4.png');
+        msg.reply(media1);
+    }else if(msg.body === '5'){
+        msg.reply("La conchita cinco\nMáximo de 6 personas\nPrecio de noche entre semana $1,800.00\nFin de semana 3 días y 2 noches o Temporada alta: $5,000.00\n\n0. Regresa al menu principal")
+        const media1 = MessageMedia.fromFilePath('./img/5.png');
+        msg.reply(media1);
     }
 
 
